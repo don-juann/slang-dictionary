@@ -4,29 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="src/fav.ico">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
     <title>Словарь Сленга</title>
 </head>
 <body>
-    <div id="header">
-        <h2 id="top-inscription">Словарь Сленга</h2>
-        <a href="login.html"><img id="exit" src="src/exit.png" alt="exit"></a>
+    <div id="choice">
+        <label>В какой роли вы хотите войти в страницу?</label>
+        <button type="button"><a href="main.html">Пользователь</a></button>
+        <button type="button" onclick="adminLogin()"><a href="admin.html">Администратор</a></button>
     </div>
-
-    <div class="search-bar-container">
-        <div class="search-bar">
-            <button id="clearButton" style="display: none;" type="button" onclick="clearSearchBar()">Очистить</button>
-            <input id="search-input" type="text" placeholder="Искать...">
-            <button type="button" onclick=searchSlang()>Искать</button>
-        </div>
-    </div>
-
-    <div id="searched-word" style="display: none;"></div>
-
-    <div id="allSlangs" class="slang-container">
-    </div>
-
-    <div id="footer"><p>А.Абдукаримов, Ж.Казиханов - IT-2209</p></div>
-    <script src="script.js"></script>
+    <script>
+        function adminLogin(){
+            const password = 'admin';
+            const passwordAttempt = prompt("Введите пароль администратора:");
+            
+            if(passwordAttempt != password){
+                alert("Неправильный пароль!");
+                window.location.href = "login.html"
+            }else{
+                window.location.href = "admin.html";
+            }
+        }
+    </script>
 </body>
 </html>

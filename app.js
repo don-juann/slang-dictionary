@@ -15,13 +15,13 @@ mongoose.connect(process.env.MONGO_LINK)
     .then(() => {
         console.log('Connected to MongoDB');
         app.listen(PORT, () => {
-            console.log(`Server is running on http://localhost:${PORT}`);
+            console.log(`Server is running.`);
         });
     })
     .catch(err => console.error('Error connecting to MongoDB:', err));
 
 app.get('/', async(req, res) => {
-    res.sendFile('./public/login.html');
+    res.sendFile('index.html');
 })
 
 // Get all slangs
