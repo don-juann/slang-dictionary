@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Slang = require('./models/slangSchema');
+require('dotenv').config()
 
 const app = express();
 const PORT = 3000;
@@ -10,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://juann:juandeag@juann.c3dfb6y.mongodb.net/slangdatabase?retryWrites=true&w=majority&appName=juann')
+mongoose.connect(process.env.MONGO_LINK)
     .then(() => {
         console.log('Connected to MongoDB');
         app.listen(PORT, () => {
@@ -20,7 +21,7 @@ mongoose.connect('mongodb+srv://juann:juandeag@juann.c3dfb6y.mongodb.net/slangda
     .catch(err => console.error('Error connecting to MongoDB:', err));
 
 app.get('/', async(req, res) => {
-    res.sendFile('index.html');
+    res.sendFile('login.html');
 })
 
 // Get all slangs
