@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="src/fav.ico">
+    <link rel="stylesheet" href="style.css">
+    <title>Панель Администратора</title>
+</head>
+<body>
+    <div id="header">
+        <h2 id="top-inscription">Словарь Сленга//Администратор</h2>
+        <a href="login.html"><img id="exit" src="src/exit.png" alt="exit"></a>
+    </div>
+
+    <div class="search-bar-container">
+        <div class="search-bar">
+            <input id="new-word-input" type="text" placeholder="Сленг..." required>
+            <input id="new-meaning-input" type="text" placeholder="Значение..." required>
+            <button type="button" onclick=addSlang()>Добавить</button>
+        </div>
+    </div>
+
+    <div class="slang-container">
+    </div>
+    <script src="adminscript.js"></script>
+</body>
+</html>

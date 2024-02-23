@@ -1,0 +1,139 @@
+@font-face {
+    font-family: Raleway;
+    src: url(src/Raleway-VariableFont_wght.ttf);
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+body {
+    font-family: Raleway;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    padding-bottom: 25px;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 10px;
+    height: 75px;
+    min-width: 100%;
+    background-color: rgb(189, 51, 51);
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 0 10px;
+    min-width: 100%;
+    height: 75px;
+    background-color: rgb(189, 51, 51);
+}
+
+#footer p {
+    color: white;
+    font-size: 1.5rem;
+}
+
+#exit {
+    width: 40px;
+    height: 40px;
+}
+
+#top-inscription {
+    color: white;
+    text-align: center;
+}
+
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+    justify-content:center ;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 5px;
+    min-width: 300px;
+}
+
+.search-bar button, .modButton {
+    padding: 8px 15px;
+    background-color: rgb(189, 51, 51);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.slang-container,
+#searched-word {
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    padding: 10px;
+    gap: 15px;
+    width: 65%;
+}
+
+.slang-card {
+    box-shadow: 4px 4px 2px rgb(163, 160, 160);
+    height: 130px;
+    overflow-y: auto;
+    border: 1px rgb(116, 111, 111) solid;
+    border-radius: 5px;
+}
+
+.slang-card-admin {
+    box-shadow: 4px 4px 2px rgb(163, 160, 160);
+    height: 100%;
+    overflow-y: auto;
+    border: 1px rgb(116, 111, 111) solid;
+    border-radius: 5px;
+    padding-bottom: 4px;
+}
+
+@media screen and (max-width:768px) {
+    .slang-container,
+    #searched-word {
+        margin: 50px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+        padding: 10px;
+        gap: 15px;
+        width: 65%;
+    }      
+    .search-bar input[type="text"] {
+        padding: 8px;
+        border: 1px solid black;
+        border-radius: 5px;
+        min-width: 150px;
+    }
+    
+    #footer p {
+        color: white;
+        font-size: 1rem;
+    }
+
+    .slang-card {
+        height: 100%;
+    }
+}

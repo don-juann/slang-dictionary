@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="src/fav.ico">
+    <link rel="stylesheet" href="login.css">
+    <title>Словарь Сленга</title>
+</head>
+<body>
+    <div id="choice">
+        <label>В какой роли вы хотите войти в страницу?</label>
+        <button type="button"><a href="index.html">Пользователь</a></button>
+        <button type="button" onclick="adminLogin()"><a href="admin.html">Администратор</a></button>
+    </div>
+    <script>
+        function adminLogin(){
+            const password = 'admin';
+            const passwordAttempt = prompt("Введите пароль администратора:");
+            
+            if(passwordAttempt != password){
+                alert("Неправильный пароль!");
+                window.location.href = "login.html"
+            }else{
+                window.location.href = "admin.html";
+            }
+        }
+    </script>
+</body>
+</html>
