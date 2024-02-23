@@ -111,6 +111,10 @@ body {
 }
 
 @media screen and (max-width:768px) {
+    #header{
+        width: 100%;
+    }
+
     .slang-container,
     #searched-word {
         margin: 50px auto;
@@ -135,5 +139,9 @@ body {
 
     .slang-card {
         height: 100%;
+    }
+
+    .search-bar {
+        flex-direction: column;
     }
 }
