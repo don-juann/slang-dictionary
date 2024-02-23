@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGO_LINK)
     .catch(err => console.error('Error connecting to MongoDB:', err));
 
 app.get('/', async(req, res) => {
-    res.sendFile('login.html');
+    res.sendFile('./public/login.html');
 })
 
 // Get all slangs
