@@ -13,7 +13,8 @@ function fetchSlangs() {
         .then(slangs => {
             const slangContainer = document.querySelector('.slang-container');
             slangContainer.innerHTML = '';
-            slangs.reverse().forEach(slang => {
+            shuffle(slangs);
+            slangs.forEach(slang => {
                 const slangCard = document.createElement('div');
                 slangCard.classList.add('slang-card');
                 slangCard.innerHTML = `
@@ -27,6 +28,25 @@ function fetchSlangs() {
         .catch(error => {
             console.error('Error fetching slangs:', error);
         });
+}
+
+function shuffle(array) {
+    let currentIndex = array.length;
+    let temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (currentIndex !== 0) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
 }
 
 function searchSlang() {
